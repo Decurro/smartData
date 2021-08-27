@@ -3,33 +3,29 @@
 @section('title', 'Authors')
 
 @section('content')
+    <a class="btn btn-primary" role="button" href="{{route('authors.create')}}">Create author and book</a>
     <table class="table">
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Author</th>
+            <th scope="col">Book</th>
+            <th scope="col">Actions</th>
+
         </tr>
         </thead>
         <tbody>
+     @foreach($authors as $author)
         <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row">{{$author->id}}</th>
+            <td>{{$author->author}}</td>
+            <td>{{$author->nameBook}}</td>
+            <td>
+                <a type="button" class="btn btn-secondary" href="{{route('authors.edit', $author)}}">Edit</a>
+            </td>
+
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-        </tr>
+     @endforeach
         </tbody>
     </table>
 @endsection

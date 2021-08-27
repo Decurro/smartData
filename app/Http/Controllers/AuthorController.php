@@ -32,11 +32,12 @@ class AuthorController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-
+        Author::create($request->only(['author','nameBook']));
+        return redirect()->route('authors.index');
     }
 
     /**
@@ -72,7 +73,10 @@ class AuthorController extends Controller
      */
     public function update(Request $request, Author $author)
     {
-        //
+        $author->update($request->only(['author','nameBook']));
+        return redirect()->route('authors.index');
+
+
     }
 
     /**

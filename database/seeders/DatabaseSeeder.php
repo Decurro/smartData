@@ -11,13 +11,13 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-//    public function run()
-//    {
-//         \App\Models\Author::factory(0->create();
-//    }
-
     public function run()
     {
-        \App\Models\Books::factory(3)->create();
+         \App\Models\Author::factory(3)->create();
     }
+
+//    public function run()
+//    {
+//        \App\Models\Books::factory(3)->create();
+//    }
 }
