@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('authors', \App\Http\Controllers\AuthorController::class);
+Route::resource('books', \App\Http\Controllers\BooksController::class);
+
